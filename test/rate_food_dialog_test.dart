@@ -12,9 +12,13 @@ import 'package:happynomnom/rate_food_dialog.dart';
 
 void main() {
   testWidgets('Rate food dialog ', (WidgetTester tester) async {
+      var onRatingSetCalled = false;
+
       await tester.pumpWidget(
         MaterialApp(
-          home: RateFoodDialog()
+          home: RateFoodDialog(onRatingSet: (rating) {
+              onRatingSetCalled = true;
+          })
         )
       );
 
@@ -23,6 +27,9 @@ void main() {
       await tester.tap(find.byIcon(Icons.favorite).first);
       await tester.pump();
 
-      expect(find.text('Continue'), findsOneWidget);
+      await tester.tap(find.text('Continue'));
+      await tester.pump();
+
+      expect(onRatingSetCalled, equals(true));
   });
 }
