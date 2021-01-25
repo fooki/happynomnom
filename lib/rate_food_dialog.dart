@@ -23,6 +23,10 @@ class _RateFoodDialogState extends State<RateFoodDialog> {
     });
   }
 
+  bool _isRatingSet() {
+    return rating > 0.0;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -42,12 +46,8 @@ class _RateFoodDialogState extends State<RateFoodDialog> {
             _setTempRating(rating);
           },
         ),
-        rating > 0.0 ? ElevatedButton(
-          onPressed: () {
-            if(rating > 0.0) {
-              widget.onRatingSet(rating.round());
-            }
-          },
+        _isRatingSet() ? ElevatedButton(
+          onPressed: () { widget.onRatingSet(rating.round()); },
           style: ElevatedButton.styleFrom(
             primary: Colors.blue,
           ),
