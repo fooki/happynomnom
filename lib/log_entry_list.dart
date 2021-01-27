@@ -11,9 +11,6 @@ class LogEntryList extends StatelessWidget {
     return ListView(
       padding: const EdgeInsets.all(8),
       children: entries.map((entry) => _LogEntryListItem(entry)).toList(),
-      // children: <_LogEntryListItem>[
-      //   Text("Log entries will end up here", textAlign: TextAlign.center),
-      // ],
     );
   }
 }
