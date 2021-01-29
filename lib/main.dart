@@ -5,8 +5,6 @@ import 'package:happynomnom/log_entry_list.dart';
 import 'package:happynomnom/log_entry.dart';
 
 void main() {
-  // Seed some data
-  // final List<LogEntry> entries = List.generate(3, (i) => LogEntry(i, DateTime.now()));
   runApp(HappyNomNom());
 }
 
@@ -14,6 +12,12 @@ class HappyNomNom extends StatefulWidget {
   List<LogEntry> entries;
 
   HappyNomNom({Key key}) : super(key: key) {
+
+    // this.entries = [
+    //   LogEntry(1, DateTime.now()),
+    //   LogEntry(1, DateTime.now()),
+    //   LogEntry(1, DateTime.now()),
+    //   ];
     this.entries = [];
   }
 
@@ -27,7 +31,7 @@ class _HappyNomNomState extends State<HappyNomNom> {
     return MaterialApp(
       title: 'Happy Nom Nom',
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.blue,
       ),
       routes: {
         '/': (context) => MyHomePage(
@@ -63,9 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: LogEntryList(entries: widget.entries)
-      ),
+      body: LogEntryList(entries: widget.entries),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.pushNamed(

@@ -10,9 +10,24 @@ class LogEntryList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      padding: const EdgeInsets.all(8),
-      children: entries.map((entry) => _LogEntryListItem(entry)).toList(),
+    return Container(
+      child:
+      Center(
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.all(4.0),
+              child: Text("Latest Entries", style: TextStyle(fontSize: 24.0)),
+            ),
+            Expanded(
+              child: ListView(
+                padding: const EdgeInsets.all(8),
+                children: entries.map((entry) => _LogEntryListItem(entry)).toList(),
+              )
+            )
+          ]
+        )
+      )
     );
   }
 }

@@ -31,6 +31,10 @@ class _RateFoodDialogState extends State<RateFoodDialog> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Text("How healthy is the food you are about to eat?"),
+        ),
         RatingBar.builder(
           initialRating: 0.0,
           minRating: 1.0,
@@ -46,16 +50,19 @@ class _RateFoodDialogState extends State<RateFoodDialog> {
             _setTempRating(rating);
           },
         ),
-        _isRatingSet() ? ElevatedButton(
-          onPressed: () { widget.onRatingSet(rating.round()); },
-          style: ElevatedButton.styleFrom(
-            primary: Colors.blue,
-          ),
-          child: const Text(
-            'Continue',
-            style: TextStyle(fontSize: 20)
-          ),
-        ) : Container()
+        _isRatingSet() ? Padding(
+          padding: EdgeInsets.all(32.0),
+          child: ElevatedButton(
+            onPressed: () { widget.onRatingSet(rating.round()); },
+            style: ElevatedButton.styleFrom(
+              primary: Colors.blue,
+            ),
+            child: const Text(
+              'Continue',
+              style: TextStyle(fontSize: 20)
+            ),
+          )
+        ): Container()
       ],
     );
   }
