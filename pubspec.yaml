@@ -21,6 +21,7 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  timeago: 2.0.29
   flutter_rating_bar: "3.2.0+1"
   flutter:
     sdk: flutter
@@ -31,6 +32,7 @@ dependencies:
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
+  integration_test: 1.0.2+2
   flutter_test:
     sdk: flutter
 

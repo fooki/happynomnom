@@ -14,9 +14,7 @@ void main() {
 
   testWidgets('LogEntryList renders provided entries', (WidgetTester tester) async {
       final List<LogEntry> entries = [
-        LogEntry(1, DateTime.parse('2021-02-01')),
-        LogEntry(3, DateTime.parse('2021-02-02')),
-        LogEntry(5, DateTime.parse('2021-02-03')),
+        LogEntry(1, DateTime.now()),
       ];
 
       await tester.pumpWidget(
@@ -25,8 +23,7 @@ void main() {
         )
       );
 
-      expect(find.textContaining('2021-02-01'), findsOneWidget);
-      expect(find.textContaining('2021-02-02'), findsOneWidget);
-      expect(find.textContaining('2021-02-03'), findsOneWidget);
+      expect(find.textContaining('now'), findsOneWidget);
+      expect(find.byIcon(Icons.favorite), findsNWidgets(5));
   });
 }

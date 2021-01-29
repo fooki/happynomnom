@@ -32,7 +32,7 @@ class _RateFoodDialogState extends State<RateFoodDialog> {
     return Column(
       children: [
         RatingBar.builder(
-          initialRating: 1.0,
+          initialRating: 0.0,
           minRating: 1.0,
           direction: Axis.horizontal,
           allowHalfRating: false,
