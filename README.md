@@ -1,6 +1,4 @@
 # happynomnom
-Take control of your emotional eating
-
 This is a work-in-progress flutter app for logging emotional state while eating food.
 
 Before eating, the user will log the following:
